@@ -1,14 +1,31 @@
-# Flask Task Manager API
+# 📝 Flask Task Manager API
 
-🔐 Регистрация, логин, создание и управление задачами с JWT авторизацией.
+Простой API для управления задачами с JWT авторизацией.  
+Позволяет регистрироваться, входить в систему и управлять своими задачами (CRUD).
 
-## Запуск проекта
+---
 
-```bash
-git clone https://github.com/твоя-ссылка/flask-task-api.git
-cd project-folder
-python -m venv venv
-source venv/bin/activate  # или venv\Scripts\activate на Windows
-pip install -r requirements.txt
-flask db upgrade
-flask run
+## 🚀 Технологии
+
+- Python 3.11+
+- Flask
+- SQLAlchemy
+- Flask-Migrate
+- JWT (JSON Web Tokens)
+- SQLite (или другая СУБД)
+
+---
+
+## 🔐 Функции
+
+- Регистрация пользователя `/register`
+- Авторизация по email и паролю `/login`
+- Создание задач `/tasks [POST]`
+- Получение всех задач `/tasks [GET]`
+- Обновление задачи `/tasks/<id> [PUT]`
+- Удаление задачи `/tasks/<id> [DELETE]`
+
+Все защищённые маршруты требуют JWT-токен в заголовке:
+
+```http
+Authorization: Bearer <your_token>
